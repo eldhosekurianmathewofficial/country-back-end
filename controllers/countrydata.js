@@ -16,5 +16,11 @@ router.get("/view",async(req,res)=>{
         countrydat
     })
 })
-
+router.post("/search",async(req,res)=>{
+    let data=req.body
+    let countrydat=await countryModel.find(data)
+    res.json({
+        countrydat
+    })
+})
 module.exports = router
