@@ -10,5 +10,11 @@ router.post("/add",async(req,res)=>{
         status:"success"
     })
 })
+router.get("/view",async(req,res)=>{
+    let countrydat=await countryModel.find()
+    res.json({
+        countrydat
+    })
+})
 
 module.exports = router
